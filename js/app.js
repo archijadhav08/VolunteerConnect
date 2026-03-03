@@ -34,10 +34,10 @@ if (profileForm) {
 
         alert("Profile Saved Successfully ✅");
 
-        profileForm.reset();
+        // Redirect to directory page
+        window.location.href = "directory.html";
     });
 }
-
 
 /* ===============================
    DISPLAY DIRECTORY
@@ -76,7 +76,6 @@ function displayVolunteers(data) {
     });
 }
 
-
 /* ===============================
    LOAD DATA
 ================================*/
@@ -88,8 +87,10 @@ function loadVolunteers() {
     displayVolunteers(volunteers);
 }
 
-loadVolunteers();
-
+// Run only if directory page exists
+if (directoryDiv) {
+    loadVolunteers();
+}
 
 /* ===============================
    DELETE VOLUNTEER
@@ -108,7 +109,6 @@ function deleteVolunteer(index) {
 
     loadVolunteers();
 }
-
 
 /* ===============================
    SEARCH FUNCTION
